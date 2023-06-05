@@ -398,7 +398,7 @@ json_result = json.dumps(result)
 print("--------> OUTPUT DATA")
 # Print the JSON data
 print(json_result)
-return json_result
+# return json_result
 
 # # Convert the dictionary to JSON format
 # json_result = json.dumps(json_result)
