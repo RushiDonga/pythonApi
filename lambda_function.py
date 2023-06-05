@@ -50,9 +50,11 @@ base64_string = "JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9DcmVhdG9yIChNb3ppbGxhLzUuMCB
 # ----------> CODE EXECUTION STARTES FROM HERE <-------------------
 extracted_text = []
 
-def lambda_handler(event, context):
+def lambda_handler():
     print("-----> CODE EXECUTION STARTED")
     extracted_text = extract_text_from_base64(base64_string)
+
+lambda_handler():
 
 
 # print(extracted_text)
