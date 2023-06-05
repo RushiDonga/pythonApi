@@ -8,7 +8,7 @@ from google.cloud.vision_v1 import types
 import os
 import json
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\Rushi\Lambda\image-to-ocr-386808-c6ab724961ac.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "image-to-ocr-386808-c6ab724961ac.json"
 client = vision_v1.ImageAnnotatorClient()
 
 
