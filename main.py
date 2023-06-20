@@ -1,4 +1,4 @@
-from flask import Flask, request
+from fastapi import FastAPI
 import base64
 import pdfplumber
 from google.cloud import vision_v1
@@ -16,8 +16,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
 
-
-app = Flask(__name__)
+app = FastAPI()
 
 @app.post("/")
 def lambda_handler():
@@ -373,8 +372,5 @@ def lambda_handler():
     #print(result_json)
 
     #print(processed_lines)
-    return result_json #'\n'.join(patient_name)
+    return result_json #'\n'.join(patient_name)      
 
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)        
