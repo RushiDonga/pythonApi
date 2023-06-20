@@ -1,0 +1,6 @@
+google-cloud-vision==2.5.0
+pdfplumber==0.8.1
+nltk==3.6.7
+PyPDF2
+pandas==1.4.3
+numpy==1.24.3
