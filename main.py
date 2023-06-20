@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import base64
 import pdfplumber
 from google.cloud import vision_v1
@@ -19,16 +19,21 @@ import string
 app = FastAPI()
 
 @app.post("/")
-def lambda_handler():
-    if request.method == 'POST':
-        if request.is_json:
-            data = request.get_json()
-            source = data.get('base64')
-            print("Data Sent: {}".format(source))
-        else:
-            print('Invalid JSON Format')
-    else:
-        print('Invalid Request Method')
+async def getInformation(info : Request):
+    req_info = await info.json()
+    source = req_info['base64']
+
+    print(source)
+
+    # if request.method == 'POST':
+    #     if request.is_json:
+    #         data = request.get_json()
+    #         source = data.get('base64')
+    #         print("Data Sent: {}".format(source))
+    #     else:
+    #         print('Invalid JSON Format')
+    # else:
+    #     print('Invalid Request Method')
  
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "image-to-ocr.json"
     client = vision_v1.ImageAnnotatorClient()
